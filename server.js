@@ -12,9 +12,7 @@ const server = express()
 const io = socketIO(server);
 
 io.on('connection', function(socket){
-  socket.on('giffed', function(){
-    io.emit('giffed');
+  socket.on('giffed', function(img, id){
+    io.emit('giffed', img, id);
   });
 });
-
-setInterval(() => io.emit('giffed'), 3000);
