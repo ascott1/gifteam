@@ -1,10 +1,12 @@
 {
   "name": "gifteam",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "6.3.1"
+  },
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node server.js",
     "start:dev": "npm run watch & nodemon index.js",
     "watch": "watchify src/js/main.js -o public/js/app.js -v",
     "build": "browserify src/js/main.js -o public/js/app.js"
