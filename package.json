@@ -7,7 +7,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "start:dev": "npm run watch & nodemon index.js",
+    "start:dev": "npm run watch & nodemon server.js",
     "watch": "watchify src/js/main.js -o public/js/app.js -v",
     "build": "browserify src/js/main.js -o public/js/app.js"
   },

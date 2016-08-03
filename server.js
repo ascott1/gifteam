@@ -11,10 +11,10 @@ const server = express()
 
 const io = socketIO(server);
 
-io.on('connection', (socket) => {
-  // the gif event
-  socket.on('giffed', () => io.emit('giffed'));
-  // event when a user disconnects
-  socket.on('disconnect', () => console.log('user disconnected'));
-
+io.on('connection', function(socket){
+  socket.on('giffed', function(){
+    io.emit('giffed');
+  });
 });
+
+setInterval(() => io.emit('giffed'), 3000);
