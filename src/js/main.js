@@ -4,7 +4,6 @@ var hat = require('hat');
 
 // set a random user id
 var userID = 'u' + hat();
-console.log(userID);
 
 var userContainer = document.createElement('div');
 userContainer.setAttribute('id', userID);
@@ -24,12 +23,12 @@ var gif = function() {
 }
 
 setInterval(function(){
-  socket.emit('user gif');
+  socket.emit('giffed');
 }, 3000);
 
-socket.on('user gif', function(msg){
+socket.on('giffed', function(){
   gif();
 });
 
-// create a gif as soon as a user connects
+// create a gif as a
 gif();
