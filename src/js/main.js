@@ -31,22 +31,15 @@ socket.on('giffed', function(img, id){
   userImg.src = img;
 
   // if the element doesn't exist, create it
-  if (typeof(userEl) === 'undefined' || userEl === null) {
+  if (!userID && typeof(userEl) === 'undefined' || userEl === null) {
     userEl = document.createElement('div');
     userEl.setAttribute('id', id);
-    console.log(userEl);
-    console.log('new div created');
     container.appendChild(userEl);
   } else {
     userEl.innerHTML = '';
   }
 
   userEl.appendChild(userImg);
-});
-
-// dirty user removal
-socket.on('remove', function(){
-  userContainer.innerHTML = '';
 });
 
 // create a gif immediately
