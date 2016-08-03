@@ -11,12 +11,10 @@ const server = express()
 
 const io = socketIO(server);
 
-io.on('connection', function(socket){
-  socket.on('giffed', function(img, id){
-    io.emit('giffed', img, id);
-  });
+io.on('connection', (socket) => {
 
-  socket.on('disconnect', function(){
-    io.emit('remove');
-  });
+  socket.on('giffed', (img, id) => io.emit('giffed', img, id));
+
+  // TODO: add user removal
+  socket.on('disconnect', () => console.log('user disconnected'));
 });
