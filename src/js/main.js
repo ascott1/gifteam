@@ -44,5 +44,10 @@ socket.on('giffed', function(img, id){
   userEl.appendChild(userImg);
 });
 
+// dirty user removal
+socket.on('remove', function(){
+  userContainer.innerHTML = '';
+});
+
 // create a gif immediately
 socket.emit('giffed', createGif(), userID);

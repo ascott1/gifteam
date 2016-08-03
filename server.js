@@ -15,4 +15,8 @@ io.on('connection', function(socket){
   socket.on('giffed', function(img, id){
     io.emit('giffed', img, id);
   });
+
+  socket.on('disconnect', function(){
+    io.emit('remove');
+  });
 });
