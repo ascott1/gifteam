@@ -1,0 +1,34 @@
+{
+  "name": "gifteam",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:dev": "npm run watch & nodemon index.js",
+    "watch": "watchify src/js/main.js -o public/js/app.js -v",
+    "build": "browserify src/js/main.js -o public/js/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ascott1/gifteam.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ascott1/gifteam/issues"
+  },
+  "homepage": "https://github.com/ascott1/gifteam#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gifshot": "^0.3.2",
+    "hat": "0.0.3",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "nodemon": "^1.10.0",
+    "watchify": "^3.7.0"
+  }
+}
